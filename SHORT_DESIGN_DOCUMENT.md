@@ -5,8 +5,9 @@
 **Date:** 2026-05-02  
 **Version:** 1.0  
 **Stack:** Python (data generation) · Dart / Flutter (diagnostic engine + UI)  
-**Related Repositories:**  
-- [baibars_interview_task_python_script](https://github.com/IbrahimTalha0/baibars_interview_task_python_script)  
+**Related Repositories:**
+
+- [baibars_interview_task_python_script](https://github.com/IbrahimTalha0/baibars_interview_task_python_script)
 - [baibars_task_mobile_app](https://github.com/IbrahimTalha0/baibars_task_mobile_app)
 
 ---
@@ -46,9 +47,14 @@
 
 This system provides fast and explainable drone diagnostics for field technicians with low technical expertise. It covers three pipeline stages: **synthetic telemetry generation** (Python), **three-tier rule-based diagnostic engine** (Dart), and **structured result interface** (Flutter). The diagnostic architecture is intentionally designed as a _local-first AI proxy_: it performs a fully deterministic first pass and calculates its own confidence score before deciding whether to escalate to a large language model. This approach keeps the token cost per diagnosis near zero in the majority of cases.
 
-> Reference: Full rule catalog → `docs_of_core/drone_diagnostic_framework.md` in the [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) repository  
-> Threshold values → `docs_of_core/thresholds.md` in the [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) repository  
-> Data generation details → `en_docs/drone_simulator_technical_review.md` or `drone_simulator_teknik_inceleme.md` in the [`baibars_interview_task_python_script`](https://github.com/IbrahimTalha0/baibars_interview_task_python_script) repository
+> To view the full rule catalog → [`baibars_task_mobile_app`] (https://github.com/IbrahimTalha0/baibars_task_mobile_app)
+> `docs_of_core/drone_diagnostic_framework.md` in the repository
+
+> Threshold values → [`baibars_task_mobile_app`] (https://github.com/IbrahimTalha0/baibars_task_mobile_app)
+> `docs_of_core/thresholds.md` in the repository
+
+> Detailed data generation documentation → [`baibars_interview_task_python_script`] (https://github.com/IbrahimTalha0/baibars_interview_task_python_script)
+> `en_docs/drone_simulator_technical_review.md` or `drone_simulator_teknik_inceleme.md` in the repository
 
 ---
 
@@ -60,7 +66,7 @@ The generation script is built considering physical realities such as motors not
 
 The script realistically reflects not only motor behaviors but also environmental and operational conditions. Seasonality is modeled with sinusoidal temperature changes, while wind effect is generated with stochastic distributions and included in calculations to affect all components of the system. Battery consumption, efficiency loss, and autonomous flight metrics are dynamically determined by the combined effects of payload, wind, and motor wear. Additionally, thermal memory between tests is preserved according to Newton's law of cooling, and waiting times between flights are simulated in accordance with real operations. While wear accumulated over the life cycle causes all performance metrics to deteriorate over time, edge-case scenarios such as sudden failure and missing sensor data are also included in the system. Model-based threshold values are defined specifically for different drone types to reflect operational realities; operational details such as pilot, customer, usage history, and flight planning are kept constant and consistent to preserve data integrity.
 
----
+## For more details: technical review documentation in the (https://github.com/IbrahimTalha0/baibars_interview_task_python_script) repository
 
 ### 1.2 Diagnostic Engine Architecture (Dart)
 
@@ -190,8 +196,6 @@ The most critical cost reduction principle is positioning two different AIs and 
 | Structured diagnostic summary (counts per subsystem/status)    | Prevents sending the full record history        |
 | Confidence gate (< 0.60) before each LLM call                  | Eliminates unnecessary API calls                |
 | Template-based report for routine output                       | LLM is only needed for complex narratives       |
-
-> Reference: Token optimization details → `drone_diagnostic_framework.md` §6
 
 ### 3.3 What Can Break or Produce False Results
 
@@ -334,7 +338,3 @@ In the field, a 3-second LLM latency is not practical for a technician working n
 
 **5. Explainability is not an add-on feature in this system, but a core requirement.**  
 Each diagnostic finding includes a Turkish explanation linked to a specific physical component and an actionable maintenance action. This requirement directly shaped the architecture; it is the main reason why ML-based anomaly detection was not preferred despite its potential sensitivity to new failures. For example, an anomaly score of 0.87 alone is not meaningful to the technician; in contrast, a statement like "M2 motor temperature is systematically higher than other motors — bearing wear is likely" clearly shows exactly where to check.
-
----
-
-_What the document covers: `lib/services/drone_diagnostic_service.dart` · `lib/services/sub_test_diagnostic_service.dart` · `lib/services/test_diagnostic_service.dart` · `lib/services/threshold_calculator.dart` · `lib/features/drone_analysis/drone_analysis_page.dart` · `baibars_python_script/generate_data_v2.py` · `docs_of_core/drone_diagnostic_framework.md` · `docs_of_core/thresholds.md` · `baibars_python_script/generate_data_v2_inceleme.md`_
