@@ -43,9 +43,9 @@
 
 Bu sistem, teknik uzmanlığı düşük saha teknisyenleri için hızlı ve açıklanabilir drone teşhisi sağlar. Üç boru hattı aşamasını kapsar: **sentetik telemetri üretimi** (Python), **üç katmanlı kural tabanlı teşhis motoru** (Dart) ve **yapılandırılmış sonuç arayüzü** (Flutter). Teşhis mimarisi kasıtlı olarak _yerel-öncelikli bir YZ vekili_ olarak tasarlanmıştır: tam deterministik ilk geçişi yapar ve büyük dil modeline yükseltme gerekip gerekmediğine karar vermeden önce kendi güven puanını hesaplar. Bu yaklaşım, vakaların çoğunda teşhis başına token maliyetini sıfıra yakın tutar.
 
-> Referans: Tam kural kataloğu → `docs_of_core/drone_diagnostic_framework.md`  
-> Eşik değerleri → `docs_of_core/thresholds.md`  
-> Veri üretimi detayları → `baibars_python_script/en_docs/drone_simulator_technical_review.md ya da drone_simulator_teknik_inceleme.md
+> Referans: Tam kural kataloğu → [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) reposundaki `docs_of_core/drone_diagnostic_framework.md`  
+> Eşik değerleri → [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) reposundaki `docs_of_core/thresholds.md`  
+> Veri üretimi detayları → [`baibars_interview_task_python_script`](https://github.com/IbrahimTalha0/baibars_interview_task_python_script) reposundaki `en_docs/drone_simulator_technical_review.md` ya da `drone_simulator_teknik_inceleme.md`
 
 ---
 

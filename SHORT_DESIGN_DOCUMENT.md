@@ -43,9 +43,9 @@
 
 This system provides fast and explainable drone diagnostics for field technicians with low technical expertise. It covers three pipeline stages: **synthetic telemetry generation** (Python), **three-tier rule-based diagnostic engine** (Dart), and **structured result interface** (Flutter). The diagnostic architecture is intentionally designed as a _local-first AI proxy_: it performs a fully deterministic first pass and calculates its own confidence score before deciding whether to escalate to a large language model. This approach keeps the token cost per diagnosis near zero in the majority of cases.
 
-> Reference: Full rule catalog → `docs_of_core/drone_diagnostic_framework.md`  
-> Threshold values → `docs_of_core/thresholds.md`  
-> Data generation details → `baibars_python_script/en_docs/drone_simulator_technical_review.md` or `drone_simulator_teknik_inceleme.md`
+> Reference: Full rule catalog → `docs_of_core/drone_diagnostic_framework.md` in the [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) repository  
+> Threshold values → `docs_of_core/thresholds.md` in the [`baibars_task_mobile_app`](https://github.com/IbrahimTalha0/baibars_task_mobile_app) repository  
+> Data generation details → `en_docs/drone_simulator_technical_review.md` or `drone_simulator_teknik_inceleme.md` in the [`baibars_interview_task_python_script`](https://github.com/IbrahimTalha0/baibars_interview_task_python_script) repository
 
 ---
 
