@@ -54,6 +54,11 @@ Built with **Riverpod** for reactive state management. The UI includes:
 - Health score cards and risk badges.
 - Scrollable lists of chronic and acute diagnostic findings.
 
+## 🔗 Related Repositories
+
+- [baibars_interview_task_python_script](https://github.com/IbrahimTalha0/baibars_interview_task_python_script) - Python synthetic data generator
+- [baibars_task_mobile_app](https://github.com/IbrahimTalha0/baibars_task_mobile_app) - Dart/Flutter diagnostic engine and UI
+
 ## 📚 Documentation
 
 Detailed documentation can be found in the following files:

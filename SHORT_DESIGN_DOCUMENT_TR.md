@@ -4,7 +4,10 @@
 **Yazar:** İbrahim Talha Demir  
 **Tarih:** 2026-05-02  
 **Versiyon:** 1.0  
-**Yığın:** Python (veri üretimi) · Dart / Flutter (teşhis motoru + arayüz)
+**Yığın:** Python (veri üretimi) · Dart / Flutter (teşhis motoru + arayüz)  
+**İlişkili Repolar:**  
+- [baibars_interview_task_python_script](https://github.com/IbrahimTalha0/baibars_interview_task_python_script)  
+- [baibars_task_mobile_app](https://github.com/IbrahimTalha0/baibars_task_mobile_app)
 
 ---
 

@@ -4,7 +4,10 @@
 **Author:** İbrahim Talha Demir  
 **Date:** 2026-05-02  
 **Version:** 1.0  
-**Stack:** Python (data generation) · Dart / Flutter (diagnostic engine + UI)
+**Stack:** Python (data generation) · Dart / Flutter (diagnostic engine + UI)  
+**Related Repositories:**  
+- [baibars_interview_task_python_script](https://github.com/IbrahimTalha0/baibars_interview_task_python_script)  
+- [baibars_task_mobile_app](https://github.com/IbrahimTalha0/baibars_task_mobile_app)
 
 ---
 
